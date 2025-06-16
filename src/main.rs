@@ -100,7 +100,7 @@ async fn main() {
         .route("/get_bibtex", get(get_bibtex_handler))
         .with_state(shared_state);
 
-    let addr = SocketAddr::from(([0, 0, 0, 0], 1337));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
     println!("-> Listening on http://{}", addr);
 
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
